@@ -1,0 +1,392 @@
+//////////////////////
+//SETUP
+//////////////////////
+
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 16px;
+	font-family: 'Inter', sans-serif;
+}
+
+.container {
+}
+
+body {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.767)), linear-gradient(90deg, rgb(153, 24, 153), rgb(68, 74, 255));
+	color: #fff;
+}
+
+//////////////////////
+//NAV
+//////////////////////
+
+.nav {
+	z-index: 1;
+	width: 100vw;
+	height: 6rem;
+	display: flex;
+	justify-content: space-between;
+	position: fixed;
+	top: 0;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.767)), linear-gradient(90deg, rgb(153, 24, 153), rgb(68, 74, 255));
+
+	.home-button {
+		align-self: center;
+		margin: 1rem 0 1rem 2rem;
+
+		.name {
+			display: flex;
+
+			h3 {
+				font-weight: 200;
+				margin-left: 0.75rem;
+				align-self: center;
+			}
+		}
+
+		img {
+			height: 3.5rem;
+		}
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+	.search {
+		position: relative;
+		bottom: 1rem;
+		margin-right: 4rem;
+	}
+
+	input[type="text"] {
+		&::placeholder {
+			color: rgb(225, 225, 225);
+		}
+		height: 2.6rem;
+		width: 15rem;
+		background-color: rgba(41, 41, 41, 0.707);
+		color: #fff;
+		padding-left: 4rem;
+		border-width: 0;
+		margin-bottom: 3rem;
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	.fa-search {
+		position: relative;
+		right: -2rem;
+		color: rgb(225, 225, 225);
+		margin-top: 3rem;
+	}
+}
+
+.title {
+	margin: 8.5rem 0 2.5rem 2rem;
+	h2 {
+		font-size: 1.2rem;
+		word-spacing: 2px;
+		font-weight: 400;
+	}
+}
+
+//////////////////////
+//TABLE
+//////////////////////
+
+.table {
+	margin: 1.5rem 1rem 3rem 1rem;
+	display: flex;
+	justify-content: center;
+
+	&__coin {
+		&--name {
+			&:hover {
+				color: rgba(255, 255, 255, 0.645);
+				transition: color 0.1s;
+			}
+		}
+
+		&--symbol {
+			font-size: 0.9rem;
+			font-weight: 200;
+			color: rgb(162, 162, 162);
+			margin-left: 0.75rem;
+
+			&:hover {
+				color: rgb(255, 255, 255);
+				transition: color 0.1s;
+			}
+		}
+
+		&--price {
+			padding-left: 0;
+		}
+	}
+}
+
+table {
+	border-collapse: collapse;
+
+	thead td {
+		font-weight: 500;
+	}
+
+	thead,
+	td {
+		padding: 1rem 1rem 1rem 2rem;
+	}
+
+	img {
+		display: flex;
+		align-items: center;
+		height: 2rem;
+		width: 2rem;
+		margin-right: 1.3rem;
+	}
+
+	a {
+		display: flex;
+		align-items: center;
+		text-decoration: none;
+		color: #fff;
+	}
+
+	.border-top {
+		td {
+			border-top: 1px solid rgba(255, 255, 255, 0.33);
+		}
+	}
+
+	.border-bottom {
+		td {
+			border-bottom: 1px solid rgba(255, 255, 255, 0.33);
+		}
+	}
+}
+
+.searched-table {
+	position: relative;
+	bottom: 3rem;
+}
+
+//////////////////////
+//COLORS
+//////////////////////
+
+.green {
+	color: rgb(56, 221, 56);
+}
+
+.red {
+	color: rgb(255, 74, 54);
+}
+
+.hidden {
+	display: none;
+}
+
+//////////////////////
+//COIN
+//////////////////////
+.coin {
+	&__page {
+		position: relative;
+		bottom: 2rem;
+
+		&--top {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			margin: 0 2rem 5rem 3.5rem;
+
+			.coin__page--info {
+				display: flex;
+				align-items: center;
+				margin-bottom: 1.75rem;
+
+				img {
+					width: 2.7rem;
+					height: 2.7rem;
+					margin-right: 1.5rem;
+				}
+
+				span {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					margin: 0 2rem 0 2rem;
+				}
+			}
+
+			.coin__page--about {
+				display: flex;
+
+				.coin__page--rank {
+					font-size: 0.75rem;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					margin: 0 1rem 0 0.2rem;
+				}
+
+				.coin__page--category {
+					font-size: 0.75rem;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					margin: 0 0rem 0 0.5rem;
+				}
+			}
+
+			.coin__page--stats {
+				margin-right: 3rem;
+
+				h3 {
+					font-size: 3rem;
+					font-weight: 500;
+					margin: 0 1rem 0 0;
+				}
+
+				p {
+					font-size: 0.9rem;
+					font-weight: 200;
+					color: rgb(162, 162, 162);
+					margin: 0 0 1rem 0.75rem;
+				}
+
+				.coin__page--price {
+					display: flex;
+					align-items: center;
+
+					div {
+						height: 2rem;
+					}
+				}
+			}
+
+			.light-background {
+				padding: 0.1rem 0.3rem;
+				border-radius: 5px;
+				border: 1px solid rgb(255, 255, 255);
+			}
+
+			.dark-background {
+				color: #000;
+				padding: 0.1rem 0.2rem;
+				border-radius: 5px;
+				background-color: rgb(255, 255, 255);
+			}
+
+			.green-background {
+				padding: 0.5rem 1rem;
+				border-radius: 5px;
+				background-color: rgb(37, 220, 104);
+			}
+
+			.red-background {
+				padding: 0.5rem 1rem;
+				border-radius: 5px;
+				background-color: rgb(220, 37, 37);
+			}
+		}
+
+		&--middle {
+			display: flex;
+			flex-direction: column;
+			border-top: 1px solid rgba(255, 255, 255, 0.486);
+			padding: 5rem 0 0 0;
+			margin-bottom: 4.5rem;
+
+			&-title {
+				margin: 0 0 4rem 6rem;
+			}
+
+			&-container {
+				display: flex;
+				justify-content: space-around;
+			}
+
+			.coin__page--market-cap {
+				h2 {
+					font-size: 1.1rem;
+					font-weight: 300;
+					margin-bottom: 2rem;
+				}
+
+				h3 {
+					margin-bottom: 2rem;
+				}
+			}
+
+			.coin__page--volume {
+				h2 {
+					font-size: 1.1rem;
+					font-weight: 300;
+					margin-bottom: 2rem;
+				}
+
+				h3 {
+				}
+			}
+
+			.coin__page--supply {
+				h2 {
+					font-size: 1.1rem;
+					font-weight: 300;
+					margin-bottom: 2rem;
+				}
+
+				h3 {
+				}
+			}
+
+			.coin__page--ath {
+				h2 {
+					font-size: 1.1rem;
+					font-weight: 300;
+					margin-bottom: 2rem;
+				}
+
+				h3 {
+					margin-bottom: 2rem;
+				}
+			}
+		}
+
+		&--bottom {
+			.coin__page--description {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				margin: 3rem 12rem;
+
+				h2 {
+					margin-bottom: 2.5rem;
+				}
+
+				p {
+					font-weight: 200;
+					line-height: 1.6rem;
+					word-spacing: 0.2rem;
+
+					a {
+						text-decoration: none;
+						color: rgb(158, 213, 255);
+					}
+				}
+			}
+		}
+	}
+}
